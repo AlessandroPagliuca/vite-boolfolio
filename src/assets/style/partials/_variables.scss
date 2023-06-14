@@ -1,3 +1,57 @@
+$bg-cont: #252529;
+$blue-dark: #111f44;
+$blue: #414e67;
+$blue-title: #c4d0ec;
+$white: #FFFFFF;
+$bg-light: #f8f9fa;
+$blue-light-01: #00d1a9;
+
+.bg-nav {
+    background-color: #1e1e20 !important;
+    height: 80px;
+    position: fixed !important;
+}
+
+.container-dark {
+    background-color: $bg-cont ;
+    padding-top: 80px;
+    height: 100vh;
+}
+
+.card-dark {
+    background-color: #1e1e20 !important;
+    color: white !important;
+    width: 200px !important;
+    height: 250px !important;
+    padding: 5px;
+    overflow-y: auto;
+
+
+}
+
+.title-color {
+    color: $blue-title !important;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 ul {
     margin: 0 !important;
 }

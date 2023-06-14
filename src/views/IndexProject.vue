@@ -1,6 +1,8 @@
 <template>
-    <div class="w-100 bg-dark" id="product-list" style="height: 100vh;">
+    <div class="w-100 container-dark " id="product-list">
         <div class="container py-5">
+
+
             <div class="row justify-content-center align-items-center">
 
                 <ProjectCard v-for="(project, index) in projects" :key="project.id" :project="project" />
@@ -31,11 +33,14 @@
 <script>
 import axios from 'axios';
 import ProjectCard from '../components/ProjectCard.vue';
+import Loader from '../components/Loader.vue';
+
 
 export default {
     name: 'IndexProject',
     components: {
         ProjectCard,
+        Loader,
     },
     data() {
         return {
