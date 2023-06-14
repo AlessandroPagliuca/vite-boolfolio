@@ -57,3 +57,28 @@ $blue-light-01: #00d1a9;
 ul {
     margin: 0 !important;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-ul {
+    padding: 0;
+
+    li {
+        a {
+            list-style-type: none;
+            color: $blue !important;
+            transition: 0.7s;
+            font-size: 40px;
+
+
+            &:hover {
+                color: #FFFFFF !important;
+                font-size: 60px;
+            }
+        }
+    }
+}
