@@ -7,24 +7,22 @@
 
                 <ProjectCard v-for="(project, index) in projects" :key="project.id" :project="project" />
 
-                <div class="col-12" style="width: fit-content;">
-                    <nav aria-label="Page navigation example" class="py-5">
-                        <ul class="pagination">
-                            <li class="page-item"><button :class="{ 'page-link': true, 'disabled': currentPage === 1 }"
-                                    @click="getData(currentPage - 1)">Previous</button></li>
-                            <li class="page-item" v-for="n in lastPage"><button
-                                    :class="{ 'page-link': true, 'active': currentPage === n }" @click="getData(n)">{{ n
-                                    }}</button>
-                            </li>
-
-                            <li class="page-item"><button
-                                    :class="{ 'page-link': true, 'disabled': currentPage === lastPage }"
-                                    @click="getData(currentPage + 1)">Next</button></li>
-                        </ul>
-                    </nav>
-                </div>
             </div>
+            <div class="" style="width: fit-content;">
+                <nav aria-label="Page navigation example" class="py-5">
+                    <ul class="pagination">
+                        <li class="page-item"><button :class="{ 'page-link': true, 'disabled': currentPage === 1 }"
+                                @click="getData(currentPage - 1)">Previous</button></li>
+                        <li class="page-item" v-for="n in lastPage"><button
+                                :class="{ 'page-link': true, 'active': currentPage === n }" @click="getData(n)">{{ n
+                                }}</button>
+                        </li>
 
+                        <li class="page-item"><button :class="{ 'page-link': true, 'disabled': currentPage === lastPage }"
+                                @click="getData(currentPage + 1)">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
 
     </div>

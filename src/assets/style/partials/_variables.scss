@@ -10,12 +10,14 @@ $blue-light-01: #00d1a9;
     background-color: #1e1e20 !important;
     height: 80px;
     position: fixed !important;
+    z-index: 1000;
 }
 
 .container-dark {
     background-color: $bg-cont ;
     padding-top: 80px;
     height: 100vh;
+    overflow-y: auto;
 }
 
 .card-dark {

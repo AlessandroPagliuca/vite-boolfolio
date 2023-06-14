@@ -1,6 +1,6 @@
 <template>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card card-dark">
+        <div class="card card-dark m-3">
             <div class="card-title">
                 <h3>{{ project.title }}</h3>
             </div>
