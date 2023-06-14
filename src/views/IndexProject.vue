@@ -3,7 +3,7 @@
         <div class="container py-5">
 
             <h2 class="title-color pb-3">{{ title }}</h2>
-
+            <Loader v-if="projects.length === 0" />
             <div class="row justify-content-center align-items-center">
 
                 <ProjectCard v-for="(project, index) in projects" :key="project.id" :project="project" />
