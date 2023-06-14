@@ -1,15 +1,18 @@
 <template>
     <div class="w-100 bg-dark" id="product-list" style="height: 100vh;">
         <div class="container py-5" style="height: 100vh;">
-            <RouterLink to="/index-project" class="btn btn-primary"> Go to index Project </RouterLink>
+            <router-link :to="{ name: 'projects' }" class="btn btn-primary"> Go to Projects </router-link>
 
         </div>
     </div>
 </template>
 
 <script>
-export default {
+import router from '../routes/router';
 
+
+export default {
+    components: { router }
 }
 </script>
 

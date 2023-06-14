@@ -2,22 +2,9 @@
     <div class="w-100 bg-dark" id="product-list" style="height: 100vh;">
         <div class="container py-5">
             <div class="row justify-content-center align-items-center">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="(project, index) in projects" :key="project.id">
-                    <div class="card" style="width: 200px; height: 200px;">
-                        <div class="card-title">
-                            <h3>{{ project.title }}</h3>
-                        </div>
-                        <div class="card-body d-flex justify-content-between align-items-end">
-                            <div>
-                                <h6>{{ project.type.tech }}</h6>
-                                <!-- <RouterLink :to="`/show-project/${project.slug}`" class="btn btn-primary">
-                                show </RouterLink> -->
 
-                            </div>
+                <ProjectCard v-for="(project, index) in projects" :key="project.id" :project="project" />
 
-                        </div>
-                    </div>
-                </div>
                 <div class="col-12" style="width: fit-content;">
                     <nav aria-label="Page navigation example" class="py-5">
                         <ul class="pagination">
@@ -28,7 +15,8 @@
                                     }}</button>
                             </li>
 
-                            <li class="page-item"><button :class="{ 'page-link': true, 'disabled': currentPage === 4 }"
+                            <li class="page-item"><button
+                                    :class="{ 'page-link': true, 'disabled': currentPage === lastPage }"
                                     @click="getData(currentPage + 1)">Next</button></li>
                         </ul>
                     </nav>
@@ -42,9 +30,13 @@
 
 <script>
 import axios from 'axios';
+import ProjectCard from '../components/ProjectCard.vue';
 
 export default {
-    'name': 'App',
+    name: 'IndexProject',
+    components: {
+        ProjectCard,
+    },
     data() {
         return {
             projects: [],
@@ -61,19 +53,11 @@ export default {
                 }
             }).then((res) => {
                 this.projects = res.data.results.data;
-                this.project = res.data.results.data.slug;
-
                 this.currentPage = res.data.results.current_page;
                 this.lastPage = res.data.results.last_page;
             })
         },
 
-        // singPage(singlePage) {
-        //     axios.get(`${this.apiUrl}/project/${slug}`).then((res) => {
-        //         this.project = res.data.results.data.slug;
-
-        //     })
-        // }
     },
     mounted() {
         this.getData(1);

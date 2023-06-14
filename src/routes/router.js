@@ -1,28 +1,32 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-
-const HomeProject = () => import('../views/HomeProject.vue');
-
-const routes = [
-    {
-        path: '/',
-        component: HomeProject
-    },
-
-    {
-        path: '/index-project',
-        component: () => import('../views/IndexProject.vue')
-    },
-
-    {
-        path: '/show-project',
-        component: () => import('../views/ShowProject.vue')
-    }
-];
-
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: () => import('../views/HomeProject.vue')
+        },
+
+        {
+            path: '/projects',
+            name: 'projects',
+            component: () => import('../views/IndexProject.vue')
+        },
+
+        {
+            path: '/projects/:slug',
+            name: 'show-project',
+            component: () => import('../views/ShowProject.vue')
+        },
+        //page not found error 404
+        {
+            path: "/:pathMatch(.*)*",
+            name: "not-found",
+            component: () => import('../views/NotFound.vue')
+        }
+    ],
 });
 
 export default router;
