@@ -4,6 +4,7 @@
             <Loader v-if="!project" />
 
             <div v-if="project">
+                <h2 class="title-color pb-3">Project: {{ project.title }}</h2>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card card-dark ">

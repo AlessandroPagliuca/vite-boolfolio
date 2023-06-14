@@ -2,6 +2,7 @@
     <div class="w-100 container-dark " id="product-list">
         <div class="container py-5">
 
+            <h2 class="title-color pb-3">{{ title }}</h2>
 
             <div class="row justify-content-center align-items-center">
 
@@ -29,6 +30,7 @@
 </template>
 
 <script>
+
 import axios from 'axios';
 import ProjectCard from '../components/ProjectCard.vue';
 import Loader from '../components/Loader.vue';
@@ -42,6 +44,7 @@ export default {
     },
     data() {
         return {
+            title: 'Projects',
             projects: [],
             apiUrl: 'http://127.0.0.1:8000/api',
             currentPage: 1,
