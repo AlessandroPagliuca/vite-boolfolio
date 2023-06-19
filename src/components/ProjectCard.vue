@@ -11,9 +11,9 @@
                 </div>
 
 
-                <router-link :to="{ name: 'show-project', params: { slug: project.slug } }" class="btn btn-primary">
+                <RouterLink :to="{ name: 'show-project', params: { slug: project.slug } }" class="btn btn-primary">
                     Show project
-                </router-link>
+                </RouterLink>
 
 
             </div>
@@ -22,9 +22,11 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
-    name: 'ProjectCard',
-    props: ['project'],
+    name: "ProjectCard",
+    props: ["project"],
 }
 </script>
 

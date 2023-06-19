@@ -16,9 +16,14 @@ const router = createRouter({
         },
 
         {
-            path: '/projects/:slug',
+            path: '/project/:slug',
             name: 'show-project',
             component: () => import('../views/ShowProject.vue')
+        },
+        {
+            path: '/contacts',
+            name: 'contacts',
+            component: () => import('../views/ContactPage.vue')
         },
         //page not found error 404
         {

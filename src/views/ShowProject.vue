@@ -47,9 +47,9 @@ export default {
     },
     methods: {
         getProject() {
-            axios.get(`${this.apiUrl}/projects/${this.$route.params.slug}`).then((res) => {
+            axios.get(`${this.apiUrl}/project/${this.$route.params.slug}`).then((res) => {
                 console.log(res.data.results);
-                if (res.data.success) {
+                if (res.data.status) {
                     this.project = res.data.results;
                 } else {
                     this.$router.push({ name: 'not-found' })
