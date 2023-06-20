@@ -31,10 +31,10 @@ export default {
                     label: 'Projects',
                     NameRoute: 'projects'
                 },
-                // {
-                //     label: 'Contacts',
-                //     NameRoute: 'contact'
-                // }
+                {
+                    label: 'Contacts',
+                    NameRoute: 'contacts'
+                }
 
 
             ]
